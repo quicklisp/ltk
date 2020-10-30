@@ -24,6 +24,8 @@
        #+:sbcl :sb-ext
        #+:sbcl :sb-thread
        #+:sbcl :sb-bsd-sockets)
+  ;; sb-thread exports "RAISE" symbol also; shadow it
+  (:shadowing-import-from :ltk :raise)
   (:export
    #:stop-server
    #:with-remote-ltk))
